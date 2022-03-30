@@ -74,8 +74,15 @@ public class Main {
 
             totalPay = payHotWater + payColdWater;
             System.out.println("Всего к оплате: " + totalPay + "руб");
+
+            if (month % 12 == 0)
+            {
+                System.out.println("Всего использовано горячей воды: " + sumHotWater + "м,куб" +
+                "\nВсего использовано холодной воды: " + sumColdWater + "м,куб");
+            }
         }
     }
+
     public int getPayHotWater() {return payHotWater;}
 
     public int getPayColdWater() {return payColdWater;}
