@@ -16,19 +16,23 @@ public class Main {
     private double totalPay; //руб.
     private int hotWaterNow;
     private int coldWaterNow;
+    private int payHotWater;
+    private int payColdWater;
 
-    public  void hotWaterNow() {
+    public  void hotWaterNow(int sumHotWater) {
         System.out.println("Введите значение счетчика горячей воды: ");
         //м,куб
         int hotWaterNow = new Scanner(System.in).nextInt();
         this.hotWaterNow = hotWaterNow;
+        this.sumHotWater = sumHotWater;
     }
 
-    public void coldWaterNow() {
+    public void coldWaterNow(int sumColdWater) {
         System.out.println("Введите значение счетчика холодной воды: ");
         //м,куб
         int coldWaterNow = new Scanner(System.in).nextInt();
         this.coldWaterNow = coldWaterNow;
+        this.sumColdWater = sumColdWater;
     }
 
     public int getSumHotWater() {return sumHotWater;}
@@ -68,15 +72,18 @@ public class Main {
             System.out.println("К оплате за холодную воду : " + payHotWater);
 
 
-            totalPay = (payHotWater + payColdWater);
+            totalPay = payHotWater + payColdWater;
             System.out.println("Всего к оплате: " + totalPay + "руб");
-
-            if (month % 12 == 0)
-            {
-                System.out.println("Всего использовано горячей воды: " + sumHotWater + "м,куб");
-                System.out.println("Всего использовано холодной воды: " + sumColdWater + "м,куб");
-            }
         }
+    }
+    public int getPayHotWater() {return payHotWater;}
+
+    public int getPayColdWater() {return payColdWater;}
+
+    public void printer()
+    {
+        System.out.println(getPayHotWater());
+        System.out.println(getPayColdWater());
     }
 
 
